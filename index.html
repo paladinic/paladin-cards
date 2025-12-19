@@ -1,0 +1,341 @@
+<!doctype html>
+<html lang="en-GB">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Paladin Singles</title>
+
+    <link rel="shortcut icon" href="logo.png" type="image/x-icon">
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Optional icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" />
+
+    <style>
+        :root {
+            /* Palette pulled from your logo (black, charcoal, gold, ivory, steel) */
+            --bg0: #070707;
+            /* near-black */
+            --bg1: #0c0b0b;
+            /* charcoal */
+            --panel: #111011;
+            /* card base */
+            --panel2: #151314;
+            /* deeper card */
+            --stroke: rgba(245, 223, 99, .22);
+
+            --text: rgba(255, 255, 255, .92);
+            --muted: rgba(255, 255, 255, .68);
+
+            --gold: #f5df63;
+            /* bright gold */
+            --gold2: #d4a12a;
+            /* mid gold */
+            --gold3: #9b6a15;
+            /* antique gold */
+            --ivory: #efe69a;
+            /* warm highlight */
+            --steel: #655c56;
+            /* steel grey */
+            --ink: #000000;
+
+            --shadow: 0 22px 70px rgba(0, 0, 0, .60);
+            --radius: 22px;
+        }
+
+        body {
+            color: var(--text);
+            background:
+                radial-gradient(900px 520px at 50% 0%, rgba(245, 223, 99, .10), transparent 60%),
+                radial-gradient(900px 520px at 15% 25%, rgba(212, 161, 42, .10), transparent 58%),
+                radial-gradient(900px 520px at 85% 30%, rgba(101, 92, 86, .12), transparent 60%),
+                linear-gradient(180deg, var(--bg0), var(--bg1));
+            min-height: 100vh;
+        }
+
+        /* Slightly “armoured” glass, less neon, more gold trim */
+        .glass {
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, .06), rgba(255, 255, 255, .02));
+            border: 1px solid var(--stroke);
+            box-shadow: var(--shadow);
+            border-radius: var(--radius);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+
+        /* Hero title: more “insignia” */
+        .hero-title {
+            letter-spacing: .06em;
+            text-transform: uppercase;
+        }
+
+        /* Logo in hero */
+        .hero-logo {
+            max-width: 240px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 14px 40px rgba(0, 0, 0, .70));
+        }
+
+        @media (max-width: 576px) {
+            .hero-logo {
+                max-width: 180px;
+            }
+        }
+
+        /* Badges: gold edge, dark fill */
+        .badge-soft {
+            background: rgba(0, 0, 0, .28);
+            border: 1px solid rgba(245, 223, 99, .28);
+            color: rgba(255, 255, 255, .80);
+        }
+
+        /* Buttons: gold primary, armoured outline secondary */
+        .btn.btn-light {
+            background: linear-gradient(180deg, var(--gold), var(--gold2));
+            border: 1px solid rgba(0, 0, 0, .35);
+            color: #111;
+            font-weight: 700;
+        }
+
+        .btn.btn-light:hover {
+            filter: brightness(1.05);
+        }
+
+        .btn-outline-light {
+            border: 1px solid rgba(245, 223, 99, .32);
+            color: rgba(255, 255, 255, .92);
+            background: rgba(0, 0, 0, .18);
+        }
+
+        .btn-outline-light:hover {
+            border-color: rgba(245, 223, 99, .55);
+            background: rgba(0, 0, 0, .28);
+            color: #fff;
+        }
+
+        .glow-btn {
+            box-shadow: 0 14px 40px rgba(212, 161, 42, .22);
+        }
+
+        /* Cards */
+        .link-card {
+            transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease;
+            background: linear-gradient(180deg, rgba(0, 0, 0, .22), rgba(0, 0, 0, .30));
+        }
+
+        .link-card:hover {
+            transform: translateY(-3px);
+            border-color: rgba(245, 223, 99, .38);
+            box-shadow: 0 26px 80px rgba(0, 0, 0, .68);
+        }
+
+        .divider {
+            height: 1px;
+            background: linear-gradient(90deg, transparent, rgba(245, 223, 99, .22), transparent);
+        }
+
+        .tiny {
+            color: var(--muted);
+            font-size: .95rem;
+        }
+
+        a {
+            color: rgba(255, 255, 255, .92);
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: #fff;
+        }
+
+        .footer-note {
+            color: rgba(255, 255, 255, .58);
+            font-size: .9rem;
+        }
+    </style>
+
+</head>
+
+<body>
+    <!-- Top bar -->
+    <header class="container py-4">
+        <nav class="d-flex align-items-center justify-content-between gap-3">
+            <div class="d-flex align-items-center gap-2">
+                <span class="badge badge-soft rounded-pill px-3 py-2">
+                    <i class="bi bi-shield-fill me-1"></i> Paladin Cards
+                </span>
+            </div>
+
+            <div class="d-flex gap-2">
+                <a class="btn btn-sm btn-outline-light glow-btn" href="#links">
+                    Browse links
+                </a>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Hero -->
+    <main class="container pb-5">
+        <section class="glass rounded-5 p-4 p-md-5 mb-4">
+            <div class="row align-items-center g-4">
+                <div class="col-lg-7 text-center text-lg-start">
+
+                    <!-- Logo -->
+                    <img src="logo.png" width="300px" alt="Paladin Cards logo" class="mb-4 hero-logo" />
+
+
+                    <p class="lead mb-4" style="color: rgba(255,255,255,.72);">
+                        MTG singles to sell or trade
+                    </p>
+
+                    <div class="d-flex flex-wrap gap-2 justify-content-center justify-content-lg-start">
+                        <a class="btn btn-light btn-lg glow-btn" href="#cardmarket">
+                            <i class="bi bi-bag-check me-2"></i>Cardmarket store
+                        </a>
+                        <a class="btn btn-outline-light btn-lg" href="#moxfield">
+                            <i class="bi bi-boxes me-2"></i>Moxfield lists
+                        </a>
+                        <a class="btn btn-outline-light btn-lg" href="#spelltable">
+                            <i class="bi bi-people me-2"></i>SpellTable
+                        </a>
+                    </div>
+
+                </div>
+
+
+                <div class="col-lg-5">
+                    <div class="glass rounded-5 p-4 h-100">
+                        <div class="d-flex align-items-center justify-content-between">
+                            <div>
+                                <div class="fw-semibold">What you will find</div>
+                                <div class="tiny">Singles, trades, and Commander nights</div>
+                            </div>
+                            <span class="badge badge-soft rounded-pill px-3 py-2">
+                                <i class="bi bi-stars me-1"></i> MTG
+                            </span>
+                        </div>
+
+                        <div class="divider my-3"></div>
+
+                        <ul class="list-unstyled mb-0 tiny">
+                            <li class="mb-2"><i class="bi bi-check2-circle me-2"></i>Cardmarket listings kept tidy</li>
+                            <li class="mb-2"><i class="bi bi-check2-circle me-2"></i>Moxfield decks and wants</li>
+                            <li><i class="bi bi-check2-circle me-2"></i>SpellTable username for Commander games</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Links -->
+        <section id="links" class="py-2">
+            <div class="row g-4">
+                <!-- Cardmarket -->
+                <div class="col-md-4">
+                    <div id="cardmarket" class="glass link-card rounded-5 p-4 h-100">
+                        <div class="d-flex align-items-start justify-content-between">
+                            <div>
+                                <h2 class="h4 mb-1">Cardmarket</h2>
+                                <p class="tiny mb-0">Buy singles directly from my store.</p>
+                            </div>
+                            <span class="badge badge-soft rounded-pill px-3 py-2">
+                                <i class="bi bi-cart3 me-1"></i> Store
+                            </span>
+                        </div>
+
+                        <div class="divider my-3"></div>
+
+                        <p class="mb-3 tiny">
+                            Browse inventory, check condition notes, and order securely via Cardmarket.
+                        </p>
+
+                        <!-- Replace with your real Cardmarket store link -->
+                        <a class="btn btn-outline-light w-100" href="https://example.com/your-cardmarket-store"
+                            target="_blank" rel="noopener">
+                            Visit my Cardmarket store <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Moxfield -->
+                <div class="col-md-4">
+                    <div id="moxfield" class="glass link-card rounded-5 p-4 h-100">
+                        <div class="d-flex align-items-start justify-content-between">
+                            <div>
+                                <h2 class="h4 mb-1">Moxfield</h2>
+                                <p class="tiny mb-0">Decklists, trade ideas, and wants.</p>
+                            </div>
+                            <span class="badge badge-soft rounded-pill px-3 py-2">
+                                <i class="bi bi-layers me-1"></i> Decks
+                            </span>
+                        </div>
+
+                        <div class="divider my-3"></div>
+
+                        <p class="mb-3 tiny">
+                            See what I am brewing and what I am looking for, handy for swaps.
+                        </p>
+
+                        <!-- Replace with your real Moxfield URL -->
+                        <a class="btn btn-outline-light w-100" href="https://example.com/your-moxfield" target="_blank"
+                            rel="noopener">
+                            Open my Moxfield <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- SpellTable -->
+                <div class="col-md-4">
+                    <div id="spelltable" class="glass link-card rounded-5 p-4 h-100">
+                        <div class="d-flex align-items-start justify-content-between">
+                            <div>
+                                <h2 class="h4 mb-1">SpellTable</h2>
+                                <p class="tiny mb-0">Commander games online.</p>
+                            </div>
+                            <span class="badge badge-soft rounded-pill px-3 py-2">
+                                <i class="bi bi-controller me-1"></i> Play
+                            </span>
+                        </div>
+
+                        <div class="divider my-3"></div>
+
+                        <p class="mb-3 tiny">
+                            Add me and ping me for a pod when you fancy a game.
+                        </p>
+
+                        <div class="glass rounded-4 p-3 mb-3">
+                            <div class="tiny mb-1">SpellTable username</div>
+                            <div class="h5 mb-0">paladinic</div>
+                        </div>
+
+                        <a class="btn btn-outline-light w-100" href="https://spelltable.wizards.com/" target="_blank"
+                            rel="noopener">
+                            Open SpellTable <i class="bi bi-arrow-up-right ms-1"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer class="pt-5 pb-4">
+            <div class="divider mb-3"></div>
+            <div class="d-flex flex-column flex-md-row gap-2 justify-content-between align-items-md-center">
+                <div class="footer-note">© <span id="year"></span> Paladin Cards</div>
+                <div class="footer-note">MTG is a trademark of Wizards of the Coast. Fan page.</div>
+            </div>
+        </footer>
+    </main>
+
+    <script>
+        document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+
+</html>
